@@ -6,9 +6,7 @@ Q/U Integrated Dust Shells
 
 ## Features
 
-- Reads spherical shell data of:
-  - Dust density (`n_d`) from a single FITS cube
-  - Polarization angles (`Inclination`, `Polarization`) from per-shell FITS files
+
 - Computes:
   - Stokes Q and U maps per shell
   - Total integrated Q/U and polarized intensity maps \( P = \sqrt{Q^2 + U^2} \)
