@@ -9,7 +9,7 @@ Q/U Integrated Dust Shells
 
 - Computes:
   - Stokes Q and U maps per shell
-  - Total integrated Q/U and polarized intensity maps \( P = \sqrt{Q^2 + U^2} \)
+  - Total integrated Q/U and polarized intensity maps P
 - Supports HEALPix format and Galactic coordinates
 - Normalized visualization with `healpy.mollview`
 - Easily selects and integrates over custom radial ranges
