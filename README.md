@@ -24,3 +24,29 @@ Q/U Integrated Dust Shells
 - `healpy`
 - `astropy`
 - `matplotlib`
+
+---
+## 🌌 `writeUF23Grid_earth.cpp`: Field Grid Generator for GMF Dust Modeling
+
+### 📌 Purpose
+
+`writeUF23Grid_earth.cpp` is a standalone example script demonstrating how to use the **UF23 Galactic Magnetic Field (GMF) model** in heliocentric coordinates (with Earth at the origin) to generate a 3D vector field grid. The output from this code provides magnetic field components \( B_x, B_y, B_z \) on a uniform Cartesian grid, which can later be interpolated onto spherical shells for **Stokes Q/U map modeling** of dust emission aligned with the GMF.
+
+This serves as a key **preprocessing step** for building synthetic sky polarization maps used in Galactic dust foreground modeling.
+
+---
+
+### ⚙️ How to Compile
+
+Make sure you have a C++17-compatible compiler (e.g., `g++`), then run:
+
+```bash
+g++ -std=c++17 -O3 writeUF23Grid_earth.cpp UF23Field.cc ParameterCovariance.cc -o writeUF23Grid_earth
+
+
+Generate your GMF model (eg.UF23):
+Navigate to the folder where writeUF23Grid_earth.cpp and UF23Field.h (and UF23Field.cpp) are located.
+Run:(1)  g++ -std=c++17 -O3 writeUF23Grid_earth.cpp UF23Field.cc -o writeUF23Grid_earth
+    (2) ./writeUF23Grid_earth
+
+
