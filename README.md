@@ -59,16 +59,26 @@ Produces a 3D Cartesian grid of GMF vectors (\( B_x, B_y, B_z \)) centered on Ea
 ```bash
 g++ -std=c++17 -O3 writeUF23Grid_earth.cpp UF23Field.cc -o writeUF23Grid_earth
 ./writeUF23Grid_earth
-
----
-
+```
 
 
 ## 🔁 Step 1: Interpolate GMF Onto Spherical Shells
 
 ### 📄 `scripts/gif_shell_mapper.py`
+This script interpolates Galactic Magnetic Field (GMF) data from a 3D Cartesian grid (Earth-centered) onto spherical shells using HEALPix angular sampling. The result is a set of FITS files, each storing magnetic field vectors over the sky at a given radius.
+### 🧠 Purpose
+To prepare shell-wise magnetic field data as a function of radius and sky position, enabling downstream modeling of dust polarization and emission using line-of-sight integration.
+### 🔧 Function
 
-[...] (step content here)
+```python
+generate_shell_fits(
+    gmf_filename: str,
+    output_dir: str,
+    healpix_order: int,
+    r_max_pc: float,
+    r_spacing_pc: float
+)
+
 
 ---
 
