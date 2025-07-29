@@ -60,27 +60,47 @@ Produces a 3D Cartesian grid of GMF vectors (\( B_x, B_y, B_z \)) centered on Ea
 g++ -std=c++17 -O3 writeUF23Grid_earth.cpp UF23Field.cc -o writeUF23Grid_earth
 ./writeUF23Grid_earth
 
-
 ---
+
+
 
 ## 🔁 Step 1: Interpolate GMF Onto Spherical Shells
 
 ### 📄 `scripts/gif_shell_mapper.py`
 
-This script interpolates Galactic Magnetic Field (GMF) data from a 3D Cartesian grid (Earth-centered) onto spherical shells using HEALPix angular sampling. The result is a set of FITS files, each storing magnetic field vectors over the sky at a given radius.
+[...] (step content here)
 
-###  Purpose
+---
 
-To prepare shell-wise magnetic field data as a function of radius and sky position, enabling downstream modeling of dust polarization and emission using line-of-sight integration.
+## 🔁 Step 2: Generate Log-Spaced Shell Coordinates
 
-### 🔧 Function
+### 📄 `scripts/generate_log_spherical_shell_coordinates.py`
 
-```python
-generate_shell_fits(
-    gmf_filename: str,
-    output_dir: str,
-    healpix_order: int,
-    r_max_pc: float,
-    r_spacing_pc: float
-)
+[...] (step content here)
+
+---
+
+## 🔁 Step 2.5: Compute Polarization & Inclination Angles
+
+### 📄 `scripts/compute_GMF_angles_jax.py`
+
+[...] (step content here)
+
+---
+
+## 🔁 Step 3: Integrate Stokes Q and U Over Shells (GMF Only)
+
+### 📄 `scripts/integrate_GMF_QU_shells_jax.py`
+
+[...] (step content here)
+
+---
+
+## 🔁 Step 4: Dust-Weighted Q/U Integration
+
+### 📄 `scripts/integrate_QU_with_dust_jax.py`
+
+[...] (step content here)
+
+---
 
