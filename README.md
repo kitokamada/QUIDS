@@ -26,7 +26,7 @@ Q/U Integrated Dust Shells
 - `matplotlib`
 
 ---
-## 🌌 `writeUF23Grid_earth.cpp`: Field Grid Generator for GMF Dust Modeling
+## 🌌 `UF23-Calculation/writeUF23Grid_earth.cpp`: Field Grid Generator for GMF Dust Modeling
 
 ### 📌 Purpose
 
@@ -44,5 +44,29 @@ Generate your GMF model (eg.UF23):
 Navigate to the folder where writeUF23Grid_earth.cpp and UF23Field.h (and UF23Field.cpp) are located.
 Run:(1)  g++ -std=c++17 -O3 writeUF23Grid_earth.cpp UF23Field.cc -o writeUF23Grid_earth
     (2) ./writeUF23Grid_earth
+
+---
+## `scripts/gif_shell_mapper.py` — Interpolate GMF Cube onto Spherical Shells
+
+This script interpolates Galactic Magnetic Field (GMF) data from a 3D Cartesian grid onto spherical shells using HEALPix angular sampling. The result is a set of FITS files, each storing magnetic field vectors over the sky at a given radius.
+
+### 🔧 Function
+```python
+generate_shell_fits(
+    gmf_filename: str,
+    output_dir: str,
+    healpix_order: int,
+    r_max_pc: float,
+    r_spacing_pc: float
+)
+
+## 📓 Example Notebook: Generating and Visualizing Shell Magnetic Field Maps
+
+Located in the `notebooks/` directory, this example demonstrates how to:
+
+1. Generate shell-wise magnetic field FITS maps from a GMF cube using `generate_shell_fits`.
+2. Load a shell file and visualize the field using `healpy`.
+
+---
 
 
