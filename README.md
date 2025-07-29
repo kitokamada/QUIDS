@@ -181,12 +181,69 @@ This notebook demonstrates how to compute the **total integrated Stokes Q and U*
 
 ---
 
+---
 
 ## 🔁 Step 4: Dust-Weighted Q/U Integration
 
 ### 📄 `scripts/integrate_QU_with_dust_jax.py`
 
-[...] (step content here)
+This script performs **Step 4** of the QUIDS pipeline: integrating Stokes **Q** and **U** polarization maps over spherical shells, now weighted by a 3D **dust density distribution** provided as a FITS cube.
+
+It extends Step 3 by modulating each shell's contribution to polarization using the spatially varying dust content, resulting in more realistic synthetic sky maps.
 
 ---
+
+### 🧠 Purpose
+
+To produce physically motivated polarization maps by combining magnetic alignment geometry with the spatial distribution of dust. This simulates what a satellite like Planck would observe for thermal dust emission in polarization.
+
+---
+
+### 🧮 Equations
+
+For each shell:
+\[
+Q_i = \sin^2(\alpha_i) \cdot \cos(2\beta_i) \cdot n_d(r_i, \hat{n})
+\]
+\[
+U_i = \sin^2(\alpha_i) \cdot \sin(2\beta_i) \cdot n_d(r_i, \hat{n})
+\]
+
+Then sum across all shells:
+\[
+Q_{\text{total}} = \sum_i Q_i, \quad U_{\text{total}} = \sum_i U_i
+\]
+
+---
+
+### 🔧 Functions
+
+```python
+sum_QU_over_shells_jax(polar_folder, nd_fits_path)
+
+---
+
+## 📓 Step 4 Example Notebook:
+**File**: `notebooks/dust_QU_shell_integrator_operator.ipynb`
+
+This notebook demonstrates how to compute and visualize **dust-weighted Stokes Q and U** polarization maps over spherical shells using the final step of the QUIDS pipeline.
+
+It combines the magnetic field geometry (via polarization and inclination angles) with the 3D dust density distribution to produce realistic synthetic sky maps.
+
+---
+
+### 🧪 What It Does
+
+- Loads precomputed `Inclination_Angle_deg` and `Polarization_Angle_deg` per shell
+- Loads 3D dust density cube from a FITS file
+- Computes:
+  - Per-shell dust-weighted Q and U maps
+  - Final integrated Q and U maps
+- Optionally saves full stacks of Q/U per shell
+- Visualizes results using `healpy.mollview`
+
+---
+
+
+
 
