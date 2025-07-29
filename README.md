@@ -38,13 +38,9 @@ This serves as a key **preprocessing step** for building synthetic sky polarizat
 
 ### ⚙️ How to Compile
 
-Make sure you have a C++17-compatible compiler (e.g., `g++`), then run:
-
-```bash
-g++ -std=c++17 -O3 writeUF23Grid_earth.cpp UF23Field.cc ParameterCovariance.cc -o writeUF23Grid_earth
-
-
 Generate your GMF model (eg.UF23):
+
+-- Make sure you have a C++17-compatible compiler (e.g., `g++`) 
 Navigate to the folder where writeUF23Grid_earth.cpp and UF23Field.h (and UF23Field.cpp) are located.
 Run:(1)  g++ -std=c++17 -O3 writeUF23Grid_earth.cpp UF23Field.cc -o writeUF23Grid_earth
     (2) ./writeUF23Grid_earth
