@@ -44,6 +44,24 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 
 ---
 
+---
+
+## 💾 Storage Considerations
+
+QUIDS generates large intermediate and output files throughout the pipeline, particularly during radial shell processing. Typical outputs that consume significant disk space include:
+
+- `fits_shell_fields/*.fits` — GMF vectors interpolated per shell
+- `shells_coordinate_log/*.fits` — 3D Cartesian coordinates for each shell
+- `fits_shell_angles_jax_log/*.fits` — Polarization and inclination angle maps
+- `Q_shells_dust.fits`, `U_shells_dust.fits` — Optional per-shell Q/U maps
+
+Depending on HEALPix resolution and number of shells, total storage can exceed **10–100+ GB**.
+
+> 🔌 **We strongly recommend using an external SSD or high-capacity local storage** for managing QUIDS outputs, especially if running high-resolution (e.g., NSIDE ≥ 256) simulations or storing per-shell data.
+
+To reduce disk usage, you may delete intermediate files after integration or compress older shells not needed for active analysis.
+
+
 ## 🛠️ Step 0 (Optional): UF23 Field Grid Generator
 
 ### 📄 `UF23-Calculation/writeUF23Grid_earth.cpp`
