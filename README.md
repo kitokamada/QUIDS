@@ -154,16 +154,6 @@ This script performs **Step 3** of the dust emission modeling pipeline: it integ
 
 To construct full-sky synthetic Stokes Q and U maps by summing contributions from each shell. This step reveals the **pure magnetic geometry** effects on polarization, **without any dust density weighting**.
 
-For each shell pixel:
-\[
-Q_i = \sin^2(\alpha_i) \cdot \cos(2\beta_i), \quad
-U_i = \sin^2(\alpha_i) \cdot \sin(2\beta_i)
-\]
-and total maps:
-\[
-Q_{\text{total}} = \sum_i Q_i, \quad U_{\text{total}} = \sum_i U_i
-\]
-
 ---
 
 ### 🔧 Functions
@@ -184,11 +174,7 @@ This notebook demonstrates how to compute the **total integrated Stokes Q and U*
 ### 🧪 What It Does
 
 - Loads inclination angle (α) and polarization angle (β) from per-shell FITS files
-- Computes per-shell Stokes Q and U maps:
-  \[
-  Q_i = \sin^2(\alpha_i) \cdot \cos(2\beta_i), \quad
-  U_i = \sin^2(\alpha_i) \cdot \sin(2\beta_i)
-  \]
+- Computes per-shell Stokes Q and U maps
 - Sums over all shells to get integrated maps
 - Saves the final Q/U maps as a FITS file
 - Visualizes them using `healpy.mollview`
