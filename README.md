@@ -11,7 +11,7 @@
 | **Step 0** | *(Optional)* Generate 3D GMF vector cube  |
 | **Step 1** | Interpolate GMF vectors onto spherical HEALPix shells |
 | **Step 2** | Generate log-spaced spherical shell coordinates |
-| **Step 2.5** | Compute polarization & inclination angles using JAX |
+| **Step 2.5** | Compute polarization & inclination angles using JAX > 🧑‍🔬 Developed in collaboration with [Dr. Gina Panopoulou](https://gpanopoulou.github.io), whose methods and research in magnetic field modeling contributed to the implementation of polarization angle calculations in Step 2.5.|
 | **Step 3** | Integrate Q and U across shells (GMF-only) |
 | **Step 4** | Integrate Q and U across shells, weighted by dust density |
 
@@ -133,11 +133,48 @@ These coordinates define the positions (X, Y, Z) in Galactic Cartesian space for
 
 ---
 
+---
+
 ## 🔁 Step 2.5: Compute Polarization & Inclination Angles
 
 ### 📄 `scripts/compute_GMF_angles_jax.py`
 
-[...] (step content here)
+This script computes the **polarization angle** (β) and **inclination angle** (α) for each pixel on every shell using the Galactic Magnetic Field (GMF) vector and the line-of-sight (LOS) direction. It is **JAX-accelerated** for fast, vectorized computation across the full sky.
+
+---
+
+### 🧠 Purpose
+
+To convert raw GMF vectors and LOS directions into angular quantities used in computing Stokes Q and U in Steps 3 and 4:
+- **Polarization angle (β):** orientation of the B-field projection in the plane of the sky
+- **Inclination angle (α):** angle between the B-field and the LOS
+
+---
+
+### 🔧 Function
+
+```python
+process_all_shells(coord_folder, field_folder, output_folder)
+```
+
+---
+
+## 📓 Step 2.5 Example Notebook: Compute Polarization & Inclination Angles (JAX Accelerated)
+
+**File**: `notebooks/angle_calculation_operator.ipynb`
+
+This notebook demonstrates how to compute **polarization angles** (β) and **inclination angles** (α) for each shell using precomputed GMF vectors and spherical coordinates. The calculation uses `jax.jit` for high-performance full-sky evaluation.
+
+---
+
+### 🧪 What It Does
+
+- Loads spherical shell coordinates (`X_PC`, `Y_PC`, `Z_PC`)
+- Loads GMF field components from Step 1 (`B_x_uG`, `B_y_uG`, `B_z_uG`)
+- Computes:
+  - **Polarization angle** (β): orientation of the projected magnetic field
+  - **Inclination angle** (α): angle between magnetic field and line of sight
+- Saves these angle maps as shell-wise FITS files
 
 ---
 
