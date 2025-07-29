@@ -78,15 +78,58 @@ generate_shell_fits(
     r_max_pc: float,
     r_spacing_pc: float
 )
+```
+## 📓 Step 1 Example Notebook:
+**File**: `notebooks/GMF_shell_mapper_operator.ipynb`  
+This notebook demonstrates how to use `generate_shell_fits` from `gif_shell_mapper.py` to interpolate Galactic Magnetic Field (GMF) data onto a set of radial spherical shells sampled in HEALPix.
 
+---
+
+### 🧪 What It Does
+
+- Loads a 3D GMF cube centered at Earth
+- Defines radial shell spacing and angular resolution (HEALPix)
+- Interpolates the magnetic field components \((B_x, B_y, B_z)\) at each direction and radius
+- Saves shell-wise FITS files containing GMF vectors
+- Visualizes one shell's field component using `healpy.mollview`
 
 ---
 
 ## 🔁 Step 2: Generate Log-Spaced Shell Coordinates
 
 ### 📄 `scripts/generate_log_spherical_shell_coordinates.py`
+This script generates **logarithmically spaced spherical shell coordinates** sampled in angular direction using a **HEALPix grid**, and saves them in FITS binary tables.
 
-[...] (step content here)
+Each output file corresponds to one shell and contains the Galactic Cartesian coordinates (X, Y, Z) and the constant radius \( R \) for every pixel.
+### 🧠 Purpose
+To define a spherical coordinate system over which Galactic Magnetic Field vectors can be projected and analyzed. These shells are used in Step 2.5 to compute polarization and inclination angles per pixel.
+### 🔧 Function
+
+```python
+generate_log_spherical_shells(
+    output_folder: str,
+    healpix_order: int,
+    r_min_pc: float,
+    r_max_pc: float,
+    num_shells: int
+)
+```
+
+
+## 📓 Step 2 Example Notebook
+**File**: `notebooks/shell_coord_builder_operator.ipynb`  
+This notebook demonstrates how to generate **logarithmically spaced spherical shell coordinates** using the `generate_log_spherical_shells` function from `generate_log_spherical_shell_coordinates.py`.
+
+These coordinates define the positions (X, Y, Z) in Galactic Cartesian space for each radial shell and are essential for projecting GMF vectors onto the shell surface.
+
+---
+
+### 🧪 What It Does
+
+- Defines logarithmically spaced radial shells between `r_min` and `r_max`
+- Uses HEALPix to sample angular directions on each shell
+- Converts from spherical (r, θ, φ) to Cartesian (x, y, z) coordinates
+- Saves each shell’s coordinates to a FITS binary table
 
 ---
 
