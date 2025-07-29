@@ -220,7 +220,7 @@ Q_{\text{total}} = \sum_i Q_i, \quad U_{\text{total}} = \sum_i U_i
 
 ```python
 sum_QU_over_shells_jax(polar_folder, nd_fits_path)
-
+```
 ---
 
 ## 📓 Step 4 Example Notebook:
