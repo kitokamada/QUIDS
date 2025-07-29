@@ -11,7 +11,7 @@
 | **Step 0** | *(Optional)* Generate 3D GMF vector cube  |
 | **Step 1** | Interpolate GMF vectors onto spherical HEALPix shells |
 | **Step 2** | Generate log-spaced spherical shell coordinates |
-| **Step 2.5** | Compute polarization & inclination angles using JAX > 🧑‍🔬 Developed in collaboration with [Dr. Gina Panopoulou](https://gpanopoulou.github.io), whose methods and research in magnetic field modeling contributed to the implementation of polarization angle calculations in Step 2.5.|
+| **Step 2.5** | Compute polarization & inclination angles using JAX > 🧑‍🔬 Developed in collaboration with [Dr. Gina Panopoulou](https://gpanopoulou.github.io), whose methods and research in magnetic field modeling contributed to the implementation of polarization angle calculations |
 | **Step 3** | Integrate Q and U across shells (GMF-only) |
 | **Step 4** | Integrate Q and U across shells, weighted by dust density |
 
