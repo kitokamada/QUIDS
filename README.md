@@ -60,13 +60,47 @@ generate_shell_fits(
     r_spacing_pc: float
 )
 
-## 📓 Example Notebook: Generating and Visualizing Shell Magnetic Field Maps
+## 📓 Example Notebook "notebooks/GMF_shell_mapper_operator.ipynb":
 
-Located in the `notebooks/` directory, this example demonstrates how to:
+this example demonstrates how to:
 
 1. Generate shell-wise magnetic field FITS maps from a GMF cube using `generate_shell_fits`.
 2. Load a shell file and visualize the field using `healpy`.
 
 ---
+## `generate_log_spherical_shell_coordinates.py` — Generate Log-Spaced Shell Coordinates
+
+
+This script generates **logarithmically spaced spherical shells** sampled in angular direction using a **HEALPix grid**, and saves their **Galactic Cartesian coordinates (X, Y, Z)** and radii \( R \) in FITS binary tables. These shells serve as the spatial foundation for magnetic field sampling and polarization modeling.
+
+---
+
+### 🔧 Function
+```python
+generate_log_spherical_shells(
+    output_folder: str,
+    healpix_order: int,
+    r_min_pc: float,
+    r_max_pc: float,
+    num_shells: int
+)
+
+## 📓 Example Notebook: "notebooks/shell_coord_builder_operator.ipynb"
+
+This notebook demonstrates how to generate **logarithmically spaced spherical shell coordinates** sampled with a HEALPix grid and save them as binary FITS tables.
+
+---
+### 🔧 Function
+```python
+generate_log_spherical_shells(
+    output_folder=OUTPUT_FOLDER,
+    healpix_order=HEALPIX_ORDER,
+    r_min_pc=R_MIN_PC,
+    r_max_pc=R_MAX_PC,
+    num_shells=NUM_SHELLS
+)
+
+
+
 
 
