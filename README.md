@@ -141,13 +141,60 @@ These coordinates define the positions (X, Y, Z) in Galactic Cartesian space for
 
 ---
 
+
 ## 🔁 Step 3: Integrate Stokes Q and U Over Shells (GMF Only)
 
 ### 📄 `scripts/integrate_GMF_QU_shells_jax.py`
 
-[...] (step content here)
+This script performs **Step 3** of the dust emission modeling pipeline: it integrates the **GMF-derived Stokes Q and U parameters** over multiple spherical shells using precomputed inclination and polarization angles from Step 2.5.
 
 ---
+
+### 🧠 Purpose
+
+To construct full-sky synthetic Stokes Q and U maps by summing contributions from each shell. This step reveals the **pure magnetic geometry** effects on polarization, **without any dust density weighting**.
+
+For each shell pixel:
+\[
+Q_i = \sin^2(\alpha_i) \cdot \cos(2\beta_i), \quad
+U_i = \sin^2(\alpha_i) \cdot \sin(2\beta_i)
+\]
+and total maps:
+\[
+Q_{\text{total}} = \sum_i Q_i, \quad U_{\text{total}} = \sum_i U_i
+\]
+
+---
+
+### 🔧 Functions
+
+```python
+sum_QU_over_shells_jax(folder_path)
+```
+---
+
+## 📓 Step 3 Example Notebook: Integrate Stokes Q and U Over GMF Shells
+
+**File**: `notebooks/integrate_GMF_QU_operator.ipynb`
+
+This notebook demonstrates how to compute the **total integrated Stokes Q and U** maps over all shells using only the Galactic Magnetic Field geometry — without any dust weighting.
+
+---
+
+### 🧪 What It Does
+
+- Loads inclination angle (α) and polarization angle (β) from per-shell FITS files
+- Computes per-shell Stokes Q and U maps:
+  \[
+  Q_i = \sin^2(\alpha_i) \cdot \cos(2\beta_i), \quad
+  U_i = \sin^2(\alpha_i) \cdot \sin(2\beta_i)
+  \]
+- Sums over all shells to get integrated maps
+- Saves the final Q/U maps as a FITS file
+- Visualizes them using `healpy.mollview`
+
+---
+
 
 ## 🔁 Step 4: Dust-Weighted Q/U Integration
 
