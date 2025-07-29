@@ -67,8 +67,9 @@ this example demonstrates how to:
 1. Generate shell-wise magnetic field FITS maps from a GMF cube using `generate_shell_fits`.
 2. Load a shell file and visualize the field using `healpy`.
 
+
 ---
-## `generate_log_spherical_shell_coordinates.py` — Generate Log-Spaced Shell Coordinates
+##  `generate_log_spherical_shell_coordinates.py` — step 2, Generate Log-Spaced Shell Coordinates
 
 
 This script generates **logarithmically spaced spherical shells** sampled in angular direction using a **HEALPix grid**, and saves their **Galactic Cartesian coordinates (X, Y, Z)** and radii \( R \) in FITS binary tables. These shells serve as the spatial foundation for magnetic field sampling and polarization modeling.
@@ -99,6 +100,87 @@ generate_log_spherical_shells(
     r_max_pc=R_MAX_PC,
     num_shells=NUM_SHELLS
 )
+
+## `scripts/compute_GMF_angles_jax.py` — Step 2.5: Compute Polarization & Inclination Angles (JAX)
+
+This script calculates **polarization angles** and **inclination angles** for each point on a spherical shell using the magnetic field vector and the line-of-sight (LOS) direction. It is **JAX-accelerated** for efficient computation across full-sky HEALPix shells.
+
+This is **Step 2.5** in the dust emission modeling pipeline.
+Special Contribution from Dr. Gina Panopoulou and Gina Panopoulou's research group : https://gpanopoulou.github.io
+---
+
+### 🔧 Function
+
+```python
+process_all_shells(coord_folder, field_folder, output_folder)
+
+## 📓 Example Notebook: "notebooks/angle_calculation_operator.ipynb" Compute Polarization & Inclination Angles (JAX Accelerated)
+
+This notebook demonstrates how to compute **polarization angles** and **inclination angles** from GMF vector fields on spherical shells using JAX. This is **Step 2.5** in the dust emission modeling pipeline.
+
+---
+
+## `integrate_GMF_QU_shells_jax.py` — Step 3: Integrate Stokes Q and U Over Shells
+
+This script performs Step 3 of the dust emission modeling pipeline: it integrates the **GMF-induced Stokes Q and U parameters** across all spherical shells using the polarization and inclination angles computed in Step 2.5.
+
+The result is a pair of full-sky HEALPix maps representing the projected magnetic field structure from the integrated shell geometry. **No dust model is applied at this stage.**
+
+---
+
+### 🧠 Physical Basis
+
+For each shell pixel, the Stokes parameters are computed as:
+\[
+Q_i = \sin^2(\alpha_i) \cdot \cos(2\beta_i), \quad
+U_i = \sin^2(\alpha_i) \cdot \sin(2\beta_i)
+\]
+Then summed over all shells to produce:
+\[
+Q_{\text{total}} = \sum_i Q_i, \quad
+U_{\text{total}} = \sum_i U_i
+\]
+
+---
+
+### 🔧 Functions
+
+#### `sum_QU_over_shells_jax(folder_path)`
+- Loads shell FITS files with `Inclination_Angle_deg` and `Polarization_Angle_deg`.
+- Computes per-shell Q and U maps.
+- Sums all contributions using **JAX** for efficiency.
+- Returns: `Q_total`, `U_total` (HEALPix maps)
+
+#### `save_QU_to_fits(Q, U, output_filename, nside)`
+- Saves the integrated Q and U maps as a FITS binary table.
+
+#### `plot_QU_maps(Q, U, output_prefix)`
+- Visualizes the Q and U maps with Mollweide projection.
+- Saves PNG figures: `{output_prefix}_Q.png` and `{output_prefix}_U.png`
+
+---
+
+### 📥 Input
+- Folder of angle FITS files from Step 2.5 (e.g. `fits_shell_angles_jax_log/`)
+  - Each file contains: `Polarization_Angle_deg`, `Inclination_Angle_deg`
+
+### 📤 Output
+- **FITS file**: Combined Q and U maps
+- **PNG plots**: Visualizations of Q and U in Mollweide projection
+
+---
+
+## 📓 Example Notebook: Integrate Stokes Q and U Over GMF Shells
+
+This notebook demonstrates **Step 3** of the dust emission modeling pipeline: integrating the **Stokes Q and U parameters** over spherical shells based on GMF-induced polarization geometry. It uses the output angle maps from Step 2.5 to construct full-sky Q/U HEALPix maps.
+
+---
+from integrate_GMF_QU_shells_jax import (
+    sum_QU_over_shells_jax,
+    save_QU_to_fits,
+    plot_QU_maps,
+)
+
 
 
 
