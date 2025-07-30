@@ -61,6 +61,10 @@ Depending on HEALPix resolution and number of shells, total storage can exceed *
 
 To reduce disk usage, you may delete intermediate files after integration or compress older shells not needed for active analysis.
 
+### 📂 Dust Map Data Source
+
+This project uses the dust map provided by [Edenhofer et al. on Zenodo](https://zenodo.org/records/8187943).
+
 
 ## 🛠️ Step 0 (Optional): UF23 Field Grid Generator
 
