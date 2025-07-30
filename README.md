@@ -42,6 +42,10 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 - `astropy`
 - `matplotlib`
 
+### 📂 Dust Map Data Source
+
+This project uses the dust map provided by [Edenhofer et al. on Zenodo](https://zenodo.org/records/8187943).
+
 ---
 
 ---
@@ -60,10 +64,6 @@ Depending on HEALPix resolution and number of shells, total storage can exceed *
 > 🔌 **We strongly recommend using an external SSD or high-capacity local storage** for managing QUIDS outputs, especially if running high-resolution (e.g., NSIDE ≥ 256) simulations or storing per-shell data.
 
 To reduce disk usage, you may delete intermediate files after integration or compress older shells not needed for active analysis.
-
-### 📂 Dust Map Data Source
-
-This project uses the dust map provided by [Edenhofer et al. on Zenodo](https://zenodo.org/records/8187943).
 
 
 ## 🛠️ Step 0 (Optional): UF23 Field Grid Generator
