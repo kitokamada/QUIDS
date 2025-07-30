@@ -66,7 +66,7 @@ To reduce disk usage, you may delete intermediate files after integration or com
 
 ### 📄 `UF23-Calculation/writeUF23Grid_earth.cpp`
 
-Standalone C++ script that generates a heliocentric GMF grid using the **UF23 model**.
+Standalone C++ script that generates a heliocentric GMF grid using the **UF23 Galactic Magnetic Field Model** [Zenodo Reference](https://zenodo.org/records/11321212).
 
 #### 🔧 Purpose
 
