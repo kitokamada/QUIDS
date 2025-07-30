@@ -44,7 +44,8 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 
 ### 📂 Dust Map Data Source
 
-This project uses the dust map provided by [Dr. Edenhofer et al] (https://zenodo.org/records/8187943).
+This project uses the dust map provided by [Dr. Edenhofer et al.](https://zenodo.org/records/8187943).
+
 ---
 
 ---
