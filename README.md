@@ -256,25 +256,6 @@ It extends Step 3 by modulating each shell's contribution to polarization using 
 
 To produce physically motivated polarization maps by combining magnetic alignment geometry with the spatial distribution of dust. This simulates what a satellite like Planck would observe for thermal dust emission in polarization.
 
----
-
-### 🧮 Equations
-
-For each shell:
-\[
-Q_i = \sin^2(\alpha_i) \cdot \cos(2\beta_i) \cdot n_d(r_i, \hat{n})
-\]
-\[
-U_i = \sin^2(\alpha_i) \cdot \sin(2\beta_i) \cdot n_d(r_i, \hat{n})
-\]
-
-Then sum across all shells:
-\[
-Q_{\text{total}} = \sum_i Q_i, \quad U_{\text{total}} = \sum_i U_i
-\]
-
----
-
 ### 🔧 Functions
 
 ```python
