@@ -42,9 +42,9 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 - `astropy`
 - `matplotlib`
 
-### 📂 Dust Map Data Source
+### 📂 Galactic Magnetic Filed Data Source and Dust Map Data Source
 
-This project uses the dust map provided by [Dr. Edenhofer et al.](https://zenodo.org/records/8187943).
+This project uses the dust map provided by [Dr. Edenhofer et al.](https://zenodo.org/records/8187943), Galactic Magnetic Field Data Source -- a heliocentric GMF grid using the **UF23 Galactic Magnetic Field Model** [Zenodo Reference](https://zenodo.org/records/11321212).
 
 ---
 
