@@ -255,10 +255,9 @@ This notebook demonstrates how to compute the **total integrated Stokes Q and U*
 - Saves the final Q/U maps as a FITS file
 - Visualizes them using `healpy.mollview`
 
-Example Output:
-<p align="center">
-  <img src="figures/no_dust_Q.png"  width="550"/>
-  <img src="figures/no_dust_U.png"  width="550"/>
+<p align="center" style="display: flex; justify-content: center; gap: 10px;">
+  <img src="figures/no_dust_Q.png" width="48%" />
+  <img src="figures/no_dust_U.png" width="48%" />
 </p>
 
 ---
