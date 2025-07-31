@@ -254,7 +254,8 @@ This notebook demonstrates how to compute the **total integrated Stokes Q and U*
 - Sums over all shells to get integrated maps
 - Saves the final Q/U maps as a FITS file
 - Visualizes them using `healpy.mollview`
-
+  
+Example Output with UF23 GMF Model:
 <p align="center" style="display: flex; justify-content: center; gap: 10px;">
   <img src="figures/no_dust_Q.png" width="48%" />
   <img src="figures/no_dust_U.png" width="48%" />
@@ -303,6 +304,12 @@ It combines the magnetic field geometry (via polarization and inclination angles
   - Final integrated Q and U maps
 - Optionally saves full stacks of Q/U per shell
 - Visualizes results using `healpy.mollview`
+  
+Example Output with Dust map Plus UF23 GMF Model:
+<p align="center" style="display: flex; justify-content: center; gap: 10px;">
+  <img src="figures/UF23_Q_map_dusty.png" width="48%" />
+  <img src="figures/UF23_U_map_dusty.png" width="48%" />
+</p>
 
 ---
 
