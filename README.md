@@ -51,7 +51,9 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 
 ### 🗺️ Example: Integrated Dust Map from 90–105 pc
 
-<img src="figures/Av_90_105pc.png" alt="Av_90_105pc" width="700"/>
+<p align="center">
+  <img src="figures/Av_90_105pc.png" alt="Av_90_105pc" width="700"/>
+</p>
 This map shows the integrated dust extinction over a radial shell from 90–105 pc. 
 
 
@@ -119,7 +121,10 @@ generate_shell_fits(
 
 This notebook demonstrates how to use `generate_shell_fits` from `gif_shell_mapper.py` to interpolate Galactic Magnetic Field (GMF) data onto a set of radial spherical shells sampled in HEALPix.
 
-![B_z_example](figures/B_z_example.png)
+<p align="center">
+  <img src="figures/B_z_example.png" alt="B_z_example" width="700"/>
+</p>
+
 This map shows the B_z over a radial shell at r = 1250.0 pc from UF23 GMF Model. 
 
 ---
@@ -312,6 +317,34 @@ Example Output with Dust map Plus UF23 GMF Model:
 </p>
 
 ---
+
+---
+
+## 🤝 Contributions
+
+Contributions are welcome! If you have improvements, bug fixes, or new models to integrate, feel free to fork the repo and submit a pull request. For major changes, please open an issue first to discuss what you’d like to modify.
+
+## 🧑‍💻 Contact
+
+For questions, feedback, or collaboration:
+
+- 📧 Email: [k.k.liao](mailto:kl4180@nyu.edu)
+- 🧪 Collaborator: [Dr. Gina Panopoulou](https://gpanopoulou.github.io)
+
+## 📚 Citation / Acknowledgments
+
+If you use this code for your research, please consider citing:
+
+- The original dust model: [Edenhofer et al. 2023](https://zenodo.org/records/8187943)
+
+
+> This project was developed as part of ongoing work in Galactic magnetic field and dust polarization modeling. We thank [Dr. Gina Panopoulou](https://gpanopoulou.github.io) for guidance and insights.
+
+## 📄 License
+
+This code is released under the MIT License. See [`LICENSE`](LICENSE) for details.
+
+
 
 
 
