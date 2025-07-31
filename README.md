@@ -51,7 +51,7 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 
 ### 🗺️ Example: Integrated Dust Map from 90–105 pc
 
-![Av_90_105pc](figures/Av_90_105pc.png)
+<img src="figures/Av_90_105pc.png" alt="Av_90_105pc" width="700"/>
 This map shows the integrated dust extinction over a radial shell from 90–105 pc. 
 
 
