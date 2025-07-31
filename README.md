@@ -11,7 +11,7 @@ This package is particularly relevant for modeling and probing how **local Galac
 - Computes:
   - Per-shell Stokes Q and U maps
   - Total integrated Q/U maps
-  - (Optional) Polarized intensity \( P = \sqrt{Q^2 + U^2} \)
+  - (Optional) Polarized intensity 
 - Supports:
   - HEALPix format
   - Galactic coordinate system
