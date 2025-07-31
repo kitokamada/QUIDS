@@ -46,7 +46,17 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 
 ### 📂 GMF and Dust Map Data Source 
 
-For this project and example notebooks, we use the dust map provided by [Dr. Edenhofer et al.](https://zenodo.org/records/8187943), Galactic Magnetic Field Data Source -- a heliocentric GMF grid using the **UF23 Galactic Magnetic Field Model** [Zenodo Reference](https://zenodo.org/records/11321212).
+[`dust_model_notebook`] folder demonstrates how to extract and visualize dust maps from the 3D dust model used in the QUIDS project. The notebook processes radial shell data and integrates extinction (\( A_V \)) along the line of sight using HEALPix spherical projections.
+🔧 Dust model used: [Edenhofer et al. (Zenodo)](https://zenodo.org/records/8187943)
+
+### 🗺️ Example: Integrated Dust Map from 90–105 pc
+
+![Av_90_105pc](figures/Av_90_105pc.png)
+This map shows the integrated dust extinction over a radial shell from 90–105 pc. 
+
+
+Galactic Magnetic Field Data Source -- a heliocentric GMF grid using the **UF23 Galactic Magnetic Field Model** [Zenodo Reference](https://zenodo.org/records/11321212).
+
 
 ---
 
