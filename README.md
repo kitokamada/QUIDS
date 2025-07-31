@@ -2,9 +2,6 @@
 
 **QUIDS** is a Python package for generating synthetic **Stokes Q and U polarization maps** using 3D dust density and **Galactic Magnetic Field (GMF)** shell data.
 
-It integrates polarized emission over **log-spaced spherical shells**, with polarization angles derived from GMF models such as **UF23** or **JF12**. The goal is to explore whether **small-scale structures** in the GMF and dust distribution can reconstruct or preserve the **large-scale polarization patterns** observed across the sky.
-
-This package is particularly relevant for modeling and probing how **local Galactic features** contribute to or interfere with global polarization signals.
 
 
 ## 🧭 Pipeline Overview
@@ -24,6 +21,9 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 
 ## Features
 
+It integrates polarized emission over **log-spaced spherical shells**, with polarization angles derived from GMF models such as **UF23** or **JF12**. The goal is to explore whether **small-scale structures** in the GMF and dust distribution can reconstruct or preserve the **large-scale polarization patterns** observed across the sky.
+
+This package is particularly relevant for modeling and probing how **local Galactic features** contribute to or interfere with global polarization signals.
 - Computes:
   - Per-shell Stokes Q and U maps
   - Total integrated Q/U maps
