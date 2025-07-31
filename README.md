@@ -56,8 +56,14 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 </p>
 This map shows the integrated dust extinction over a radial shell from 90–105 pc. 
 
+---
 
-Galactic Magnetic Field Data Source -- a heliocentric GMF grid using the **UF23 Galactic Magnetic Field Model** [Zenodo Reference](https://zenodo.org/records/11321212).
+### 🧲 Galactic Magnetic Field Data Source
+
+We use a heliocentric GMF grid based on the **UF23 Galactic Magnetic Field Model**.  
+You can access the model and data from the following Zenodo archive:
+
+🔗 [UF23 GMF Model – Zenodo Reference](https://zenodo.org/records/11321212)
 
 
 ---
