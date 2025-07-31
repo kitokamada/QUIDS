@@ -120,7 +120,7 @@ generate_shell_fits(
 This notebook demonstrates how to use `generate_shell_fits` from `gif_shell_mapper.py` to interpolate Galactic Magnetic Field (GMF) data onto a set of radial spherical shells sampled in HEALPix.
 
 ![B_z_example](figures/B_z_example.png)
-This map shows the B_z over a radial shell at r = 1250.0 pc. 
+This map shows the B_z over a radial shell at r = 1250.0 pc from UF23 GMF Model. 
 
 ---
 
