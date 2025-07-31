@@ -49,12 +49,11 @@ Each step has a matching example notebook in the `notebooks/` directory for easy
 [`dust_model_notebook`] folder demonstrates how to extract and visualize dust maps from the 3D dust model used in the QUIDS project. The notebook processes radial shell data and integrates extinction (\( A_V \)) along the line of sight using HEALPix spherical projections.
 🔧 Dust model used: [Edenhofer et al. (Zenodo)](https://zenodo.org/records/8187943)
 
-### 🗺️ Example: Integrated Dust Map from 90–105 pc
+### 🗺️ Example: Integrated Dust Map from 110–150 pc
 
 <p align="center">
   <img src="figures/Av_90_105pc.png" alt="Av_90_105pc" width="700"/>
 </p>
-This map shows the integrated dust extinction over a radial shell from 90–105 pc. 
 
 ---
 
