@@ -3,22 +3,6 @@
 **QUIDS** is a Python package for generating synthetic **Stokes Q and U polarization maps** using 3D dust density and **Galactic Magnetic Field (GMF)** shell data.
 
 
-
-## 🧭 Pipeline Overview
-
-| Step | Description |
-|------|-------------|
-| **Step 0** | *(Optional)* Generate 3D GMF vector cube (eg. UF23 Galactic Magnetic Field Model, JF12 Galactic Magnetic Field Model) |
-| **Step 1** | Interpolate GMF vectors onto spherical HEALPix shells |
-| **Step 2** | Generate log-spaced spherical shell coordinates |
-| **Step 2.5** | Compute polarization & inclination angles using JAX > 🧑‍🔬 Developed in collaboration with [Dr. Gina Panopoulou](https://gpanopoulou.github.io), whose methods and research in magnetic field modeling contributed to the implementation of polarization angle calculations |
-| **Step 3** | Integrate Q and U across shells (GMF-only) |
-| **Step 4** | Integrate Q and U across shells, weighted by dust density |
-
-Each step has a matching example notebook in the `notebooks/` directory for easy experimentation.
-
----
-
 ## Features
 
 It integrates polarized emission over **log-spaced spherical shells**, with polarization angles derived from GMF models such as **UF23** or **JF12**. The goal is to explore whether **small-scale structures** in the GMF and dust distribution can reconstruct or preserve the **large-scale polarization patterns** observed across the sky.
@@ -34,6 +18,21 @@ This package is particularly relevant for modeling and probing how **local Galac
 - Accelerated by [JAX](https://github.com/google/jax)
 - Easily integrates over custom radial ranges
 - Built-in Mollweide visualization with `healpy.mollview`
+
+---
+
+## 🧭 Pipeline Overview
+
+| Step | Description |
+|------|-------------|
+| **Step 0** | *(Optional)* Generate 3D GMF vector cube (eg. UF23 Galactic Magnetic Field Model, JF12 Galactic Magnetic Field Model) |
+| **Step 1** | Interpolate GMF vectors onto spherical HEALPix shells |
+| **Step 2** | Generate log-spaced spherical shell coordinates |
+| **Step 2.5** | Compute polarization & inclination angles using JAX > 🧑‍🔬 Developed in collaboration with [Dr. Gina Panopoulou](https://gpanopoulou.github.io), whose methods and research in magnetic field modeling contributed to the implementation of polarization angle calculations |
+| **Step 3** | Integrate Q and U across shells (GMF-only) |
+| **Step 4** | Integrate Q and U across shells, weighted by dust density |
+
+Each step has a matching example notebook in the `notebooks/` directory for easy experimentation.
 
 ---
 
