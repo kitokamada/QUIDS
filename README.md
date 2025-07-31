@@ -266,6 +266,11 @@ Example Output with UF23 GMF Model:
   <img src="figures/no_dust_U.png" width="48%" />
 </p>
 
+We use the argument `norm='hist'` in `healpy.mollview` to apply **histogram equalization** to the color scale:
+
+```python
+hp.mollview(data, norm='hist', ...)
+```
 ---
 
 ---
@@ -316,6 +321,11 @@ Example Output with Dust map Plus UF23 GMF Model:
   <img src="figures/UF23_U_map_dusty.png" width="48%" />
 </p>
 
+We use the argument `norm='hist'` in `healpy.mollview` to apply **histogram equalization** to the color scale:
+
+```python
+hp.mollview(data, norm='hist', ...)
+```
 ---
 
 ---
