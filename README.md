@@ -125,7 +125,7 @@ This notebook demonstrates how to use `generate_shell_fits` from `gif_shell_mapp
   <img src="figures/B_z_example.png" alt="B_z_example" width="700"/>
 </p>
 
-This map shows the B_z over a radial shell at r = 1250.0 pc from UF23 GMF Model. 
+For example, this map shows the B_z over a radial shell at r = 1250.0 pc from UF23 GMF Model. 
 
 ---
 
